@@ -6,8 +6,10 @@ REM  VDock Setup Installer
 REM  Installs all dependencies and creates a desktop shortcut
 REM ============================================================
 
-REM Resolve repo root (parent of the scripts\ folder)
-for %%I in ("%~dp0..") do set "ROOT=%%~fI"
+REM Resolve repo root (this file lives at the repo root)
+set "ROOT=%~dp0"
+REM Strip trailing backslash
+if "%ROOT:~-1%"=="\" set "ROOT=%ROOT:~0,-1%"
 
 title VDock Setup
 
